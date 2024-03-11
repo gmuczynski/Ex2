@@ -2,11 +2,19 @@
 {
     public static void Main(string[] args)
     {
-        int[] arr = {1, 5, 8, 12, 76, 101};
+        List<Int32> array = new List<int>();
 
-        foreach (int num in arr)
+        foreach (var arg in args)
         {
-            Console.WriteLine(num);
+            int num = 0;
+            //Console.WriteLine(arg);
+            if (int.TryParse(arg, out num))
+            {
+                //Console.WriteLine(num);
+                array.Add(num);
+            }
         }
+        
+        Console.WriteLine(array.Average());
     }
 }
