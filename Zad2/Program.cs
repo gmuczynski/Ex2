@@ -7,14 +7,17 @@
         foreach (var arg in args)
         {
             int num = 0;
-            //Console.WriteLine(arg);
             if (int.TryParse(arg, out num))
             {
-                //Console.WriteLine(num);
                 array.Add(num);
             }
         }
         
-        Console.WriteLine(array.Average());
+        Console.WriteLine(Avg(array));
+    }
+    
+    public static double Avg(List<Int32> array)
+    {
+        return array.Average();
     }
 }
