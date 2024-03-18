@@ -2,11 +2,22 @@
 {
     public static void Main(string[] args)
     {
-        int[] arr = {1, 5, 8, 12, 76, 101};
+        List<Int32> array = new List<int>();
 
-        foreach (int num in arr)
+        foreach (var arg in args)
         {
-            Console.WriteLine(num);
+            int num = 0;
+            if (int.TryParse(arg, out num))
+            {
+                array.Add(num);
+            }
         }
+        
+        Console.WriteLine(Avg(array));
+    }
+    
+    public static double Avg(List<Int32> array)
+    {
+        return array.Average();
     }
 }
